@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prasta Dwipayana — Risk Advisor</title>
+<meta name="description" content="Prasta Dwipayana, Risk Advisor. Membantu Anda memahami risiko kehidupan, mempersiapkan perlindungan finansial, dan menjaga hal-hal berharga bagi Anda dan keluarga.">
+<meta name="theme-color" content="#ED1B2E">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prasta Dwipayana — Risk Advisor">
+<meta property="og:description" content="Membantu Anda memahami risiko kehidupan, mempersiapkan perlindungan finansial, dan menjaga hal-hal berharga bagi Anda dan keluarga. Asah • Asih • Asuh.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#ED1B2E;
+    --red-dark:#C8102E;
+    --red-deep:#A50E1F;
+    --red-soft:#FDECEE;
+    --red-mist:#FFF6F7;
+    --white:#FFFFFF;
+    --text:#2B2B2B;
+    --muted:#6E6E6E;
+    --line:#F2D6D9;
+    --radius:28px;
+    --wrap:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--white);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-weight:800;line-height:1.1;letter-spacing:-.025em;color:#1d1d1d}
+  .tag{display:inline-block;background:var(--red);color:#fff;padding:0 .3em;border-radius:10px}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+
+  /* ---------- Buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;padding:14px 22px;border-radius:999px;transition:.2s;white-space:nowrap}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 8px 22px rgba(237,27,46,.28)}
+  .btn-red:hover{background:var(--red-dark);transform:translateY(-2px)}
+  .btn-white{background:#fff;color:var(--red)}
+  .btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.15)}
+  .btn-ghost{border:1.5px solid currentColor}
+  .btn-ghost:hover{background:rgba(237,27,46,.06)}
+  .btn .arrow{width:26px;height:26px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center;font-size:14px}
+  .btn-white .arrow{background:var(--red);color:#fff}
+
+  /* ---------- Hero ---------- */
+  .hero{background:linear-gradient(180deg,#fff 0%,#fff 55%,var(--red-mist) 100%);padding:20px 0 0;overflow:hidden;position:relative}
+  .nav{display:flex;align-items:center;justify-content:space-between;background:var(--red);color:#fff;border-radius:999px;padding:10px 12px 10px 14px;gap:16px;box-shadow:0 12px 30px rgba(237,27,46,.25)}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;line-height:1.15}
+  .brand-mark{width:38px;height:38px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center;font-weight:800;font-size:14px}
+  .brand small{display:block;font-weight:500;font-size:11px;opacity:.8;letter-spacing:.1em;text-transform:uppercase}
+  .nav ul{display:flex;gap:28px;list-style:none;font-size:14px;font-weight:500}
+  .nav ul a{opacity:.85}.nav ul a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+  .nav .btn{padding:10px 18px;font-size:14px}
+
+  .hero-grid{display:grid;grid-template-columns:1fr 1.05fr 1fr;align-items:end;gap:24px;margin-top:52px}
+  .hero-title{grid-column:1/-1;text-align:center;font-size:clamp(34px,5.4vw,66px);max-width:920px;margin:0 auto;position:relative}
+  .hero-title .asterisk{position:absolute;left:-12px;top:-20px;color:var(--red);font-size:.85em;transform:rotate(12deg)}
+  .hero-left{padding-bottom:64px;font-size:15px;color:var(--muted)}
+  .hero-left p{margin-bottom:22px;max-width:300px}
+  .hero-left .btn-ghost{color:var(--red)}
+  .hero-photo{position:relative;justify-self:center;width:100%;max-width:400px}
+  .hero-photo .arch{aspect-ratio:4/5;border-radius:220px 220px 0 0;overflow:hidden;background:linear-gradient(180deg,var(--red),var(--red-deep))}
+  .hero-photo .arch img{width:100%;height:100%;object-fit:cover;object-position:42% 30%;transform:scale(1.6);transform-origin:42% 34%}
+  .hero-photo .cta-float{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:8px;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);padding:6px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+  .hero-photo .cta-float .btn{padding:10px 16px;font-size:13px;box-shadow:none}
+  .hero-photo .cta-float .btn-ghost{color:var(--red)}
+  .hero-right{padding-bottom:64px;text-align:right}
+  .hero-right .big{font-weight:800;font-size:32px;line-height:1;letter-spacing:-.02em;color:#1d1d1d}
+  .hero-right .big span{color:var(--red)}
+  .hero-right p{font-size:13px;color:var(--muted);margin-top:8px}
+  .hero-right .pill{display:inline-block;margin-top:22px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);padding:7px 14px;border-radius:999px}
+
+  /* ---------- Section shell ---------- */
+  section{padding:96px 0}
+  .card-red{background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);color:#fff;border-radius:var(--radius);position:relative;overflow:hidden}
+  .card-red::after{content:"";position:absolute;width:460px;height:460px;border-radius:50%;right:-160px;top:-180px;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 65%);pointer-events:none}
+  .card-red > *{position:relative;z-index:1}
+  .card-red h2,.card-red h3{color:#fff}
+  .card-red .tag{background:#fff;color:var(--red)}
+
+  /* ---------- Pillars bar ---------- */
+  .pillars{padding:0 0 24px;background:var(--red-mist)}
+  .pillars .bar{display:grid;grid-template-columns:repeat(4,1fr);padding:28px 12px;transform:translateY(-1px)}
+  .pillars .item{text-align:center;padding:0 12px;border-right:1px solid rgba(255,255,255,.3)}
+  .pillars .item:last-child{border:0}
+  .pillars .item b{display:block;font-weight:800;font-size:21px;letter-spacing:-.01em}
+  .pillars .item span{font-size:13px;opacity:.85}
+  .pillars .caption{text-align:center;margin-top:20px;font-size:15px;color:var(--muted)}
+
+  /* ---------- About ---------- */
+  .about{background:var(--red-mist);padding-top:72px}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .about h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:28px}
+  .about .lead{font-size:17px;color:#333;margin-bottom:18px}
+  .about .muted{color:var(--muted);font-size:15px;margin-bottom:18px}
+  .about .img-a{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;max-width:480px;box-shadow:0 20px 40px rgba(237,27,46,.18)}
+  .about .img-a img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+  .about .img-a .badge{position:absolute;left:16px;bottom:16px;background:#fff;border-radius:16px;padding:10px 16px;line-height:1.25;box-shadow:0 10px 24px rgba(0,0,0,.15)}
+  .about .img-a .badge b{display:block;color:#1d1d1d;font-size:15px}
+  .about .img-a .badge span{color:var(--red);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
+  /* ---------- Team ---------- */
+  .team{padding-top:0}
+  .team-card{border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 50px rgba(237,27,46,.2);background:linear-gradient(135deg,var(--red),var(--red-dark))}
+  .team-card > img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 55%}
+  .team-body{color:#fff;padding:36px 40px;display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap}
+  .team-body .eyebrow{color:#fff;opacity:.9}
+  .team-body h2{color:#fff;font-size:clamp(28px,3.6vw,44px);margin-bottom:12px}
+  .team-body h2 .tag{background:#fff;color:var(--red)}
+  .team-body p{max-width:520px;opacity:.95}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chips span{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(6px);padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600}
+  .quote{border-left:4px solid var(--red);background:#fff;border-radius:0 16px 16px 0;padding:16px 20px;margin:28px 0;font-size:18px;font-weight:600;line-height:1.5;color:#1d1d1d}
+
+  /* ---------- Services ---------- */
+  .services .card-red{padding:48px;display:grid;grid-template-columns:1.1fr .9fr .5fr;gap:28px;align-items:stretch}
+  .services h2{font-size:clamp(28px,3.2vw,40px);margin-bottom:14px}
+  .services .intro{opacity:.9;font-size:15px;margin-bottom:26px;max-width:420px}
+  .svc-list{list-style:none;display:grid;gap:10px}
+  .svc-list li{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:14px 18px;transition:.2s;cursor:default}
+  .svc-list li:hover{background:#fff;color:var(--text)}
+  .svc-list li:hover small{color:var(--muted);opacity:1}
+  .svc-list .n{flex:none;width:28px;height:28px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center;font-size:13px;font-weight:800}
+  .svc-list li:hover .n{background:var(--red);color:#fff}
+  .svc-list b{display:block;font-size:15px}
+  .svc-list small{opacity:.82;font-size:13px}
+  .services .photo{border-radius:22px;overflow:hidden;min-height:320px;border:4px solid rgba(255,255,255,.35)}
+  .services .photo img{width:100%;height:100%;object-fit:cover;object-position:42% 45%}
+  .services .side{display:flex;flex-direction:column;gap:12px;justify-content:flex-end;position:relative}
+  .services .side .asterisk{position:absolute;top:-10px;right:0;font-size:64px;color:#fff;font-weight:800;line-height:1}
+  .side-tile{border-radius:18px;padding:18px;font-weight:800;font-size:17px;line-height:1.15;display:flex;justify-content:space-between;align-items:flex-end;gap:8px;min-height:110px;transition:.2s}
+  .side-tile:hover{transform:translateY(-3px)}
+  .side-tile .c{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:14px}
+  .tile-white{background:#fff;color:var(--red)}.tile-white .c{background:var(--red);color:#fff}
+  .tile-deep{background:var(--red-deep);color:#fff}.tile-deep .c{background:#fff;color:var(--red)}
+
+  /* ---------- Products ---------- */
+  .products{padding-top:24px}
+  .products .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+  .products h2{font-size:clamp(28px,3.4vw,42px)}
+  .products .head p{color:var(--muted);max-width:420px;font-size:15px}
+  .p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+  .p-card{grid-column:span 2;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+  .p-card:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(237,27,46,.18);border-color:var(--red)}
+  .p-top{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;padding:24px 24px 22px;position:relative;overflow:hidden}
+  .p-top::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-80px;top:-90px;background:radial-gradient(circle,rgba(255,255,255,.22),transparent 65%)}
+  .p-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);padding:4px 10px;border-radius:999px;margin-bottom:12px}
+  .p-top h3{color:#fff;font-size:24px;margin-bottom:4px}
+  .p-top .sub{font-size:13.5px;opacity:.9}
+  .p-stat{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-top:18px;position:relative;z-index:1}
+  .p-stat b{white-space:nowrap;font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1}
+  .p-stat span{font-size:13px;opacity:.9;line-height:1.3;max-width:170px}
+  .p-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+  .p-body ul{list-style:none;display:grid;gap:10px;margin-bottom:22px}
+  .p-body li{display:flex;gap:10px;font-size:14px;color:#444;line-height:1.45}
+  .p-body li::before{content:"";flex:none;width:18px;height:18px;margin-top:1px;border-radius:50%;background:var(--red-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ED1B2E' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+  .p-body li strong{color:var(--red)}
+  .p-body .btn{margin-top:auto;align-self:flex-start;padding:11px 18px;font-size:14px}
+  .p-note{margin-top:22px;font-size:12.5px;color:var(--muted);text-align:center}
+
+  /* ---------- Values ---------- */
+  .values{padding-top:24px}
+  .values .row{display:flex;justify-content:center;align-items:center;gap:28px;flex-wrap:wrap;font-weight:800;letter-spacing:-.03em;font-size:clamp(30px,4.6vw,56px);color:#1d1d1d}
+  .values .row .star{color:var(--red);font-size:.55em}
+  .values .rule{height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent);margin:28px auto 40px;max-width:720px}
+  .values .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .v-card{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+  .v-card:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(237,27,46,.18);border-color:var(--red)}
+  .v-card .img{aspect-ratio:16/10;overflow:hidden;position:relative}
+  .v-card .img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .v-card:hover .img img{transform:scale(1.06)}
+  .v-card .img .label{position:absolute;left:16px;bottom:16px;background:var(--red);color:#fff;font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+  .v-card .body{padding:24px}
+  .v-card h3{font-size:20px;margin-bottom:10px}
+  .v-card p{color:var(--muted);font-size:14.5px}
+
+  /* ---------- Who I help ---------- */
+  .who{background:var(--red-mist)}
+  .who h2{font-size:clamp(28px,3.2vw,40px);margin-bottom:34px}
+  .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .who-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;transition:.2s}
+  .who-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(237,27,46,.16);border-color:var(--red)}
+  .who-card .head{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+  .who-card .ic{width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;flex:none}
+  .who-card .ic svg{width:22px;height:22px}
+  .who-card b{display:block;font-size:16px;line-height:1.2;color:#1d1d1d}
+  .who-card small{color:var(--red);font-weight:600;font-size:12px}
+  .who-card p{font-size:14px;color:var(--muted)}
+
+  /* ---------- Process ---------- */
+  .process h2{font-size:clamp(28px,3.2vw,40px);margin-bottom:38px;text-align:center}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+  .step{padding:28px 22px;background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:20px}
+  .step::before{counter-increment:s;content:"0" counter(s);font-weight:800;font-size:40px;letter-spacing:-.03em;color:var(--red);line-height:1;display:block;margin-bottom:14px}
+  .step b{display:block;font-size:17px;margin-bottom:6px;color:#1d1d1d}
+  .step p{color:var(--muted);font-size:14px}
+
+  /* ---------- Flyer / Komitmen ---------- */
+  .commit{padding-top:0}
+  .commit-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+  .flyer{display:block;border-radius:24px;overflow:hidden;box-shadow:0 28px 56px rgba(237,27,46,.22);transform:rotate(-1.5deg);transition:.3s;border:6px solid #fff;max-width:440px;justify-self:center}
+  .flyer:hover{transform:rotate(0) scale(1.02)}
+  .flyer img{width:100%;height:auto}
+  .commit h2{font-size:clamp(30px,4vw,50px);margin-bottom:26px}
+  .commit h2 .heart{color:var(--red)}
+  .c-list{list-style:none;display:grid;gap:14px;margin-bottom:28px}
+  .c-list li{display:flex;gap:16px;align-items:center;background:var(--red-mist);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+  .c-list .ic{flex:none;width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center}
+  .c-list .ic svg{width:22px;height:22px}
+  .c-list b{display:block;color:#1d1d1d;font-size:16px}
+  .c-list span{color:var(--muted);font-size:14px}
+  .commit .tagline{margin-top:20px;font-weight:800;color:var(--red);letter-spacing:.02em}
+
+  /* ---------- CTA ---------- */
+  .cta{padding:0 0 96px}
+  .cta .card-red{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:end;padding:56px 56px 0}
+  .cta h2{font-size:clamp(32px,4.4vw,52px);margin-bottom:18px}
+  .cta p{opacity:.92;max-width:460px;margin-bottom:28px}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:12px;padding-bottom:56px}
+  .cta-actions .btn-ghost{color:#fff}
+  .cta-actions .btn-ghost:hover{background:rgba(255,255,255,.12)}
+  .cta-photo{justify-self:end;width:100%;max-width:380px;aspect-ratio:4/5;border-radius:200px 200px 0 0;overflow:hidden;background:#fff}
+  .cta-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transform:scale(1.2);transform-origin:50% 25%}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--red-deep);color:#fff;border-radius:56px 56px 0 0;padding:64px 0 0}
+  .f-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.25)}
+  .f-top p{max-width:440px;opacity:.92}
+  .f-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:36px 0 48px}
+  .f-cols h4{font-weight:800;font-size:17px;margin-bottom:12px}
+  .f-cols a,.f-cols span{display:block;opacity:.88;font-size:14px;margin-bottom:6px}
+  .f-cols a:hover{opacity:1;text-decoration:underline}
+  .f-bottom{background:#8A0B19;text-align:center;font-size:12.5px;padding:16px 24px}
+  .f-bottom small{display:block;opacity:.75;margin-top:4px}
+
+  /* ---------- Floating WA ---------- */
+  .wa{position:fixed;right:20px;bottom:20px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:.2s}
+  .wa:hover{transform:scale(1.07)}
+  .wa svg{width:30px;height:30px;fill:#fff}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .nav ul{display:none}
+    .hero-grid{grid-template-columns:1fr;text-align:center;gap:28px}
+    .hero-left,.hero-right{padding-bottom:0;text-align:center}
+    .hero-left p{margin:0 auto 18px}
+    .hero-photo{order:3}
+    .hero-right{order:2}
+    .about-grid,.commit-grid{grid-template-columns:1fr}
+    .cta .card-red{grid-template-columns:1fr;padding:40px 32px 0}
+    .services .card-red{grid-template-columns:1fr 1fr}
+    .services .card-red > :first-child{grid-column:1/-1}
+    .values .grid{grid-template-columns:1fr 1fr}
+    .p-grid{grid-template-columns:1fr 1fr}
+    .p-card{grid-column:auto}
+    .who-grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .cta-photo{justify-self:center}
+    .cta-actions{padding-bottom:20px}
+  }
+  @media (max-width:620px){
+    .wrap{padding:0 16px}
+    section{padding:64px 0}
+    .nav .btn span.txt{display:none}
+    .pillars .bar{grid-template-columns:1fr 1fr;row-gap:20px}
+    .pillars .item:nth-child(2){border-right:0}
+    .services .card-red{padding:24px;grid-template-columns:1fr}
+    .team-card > img{aspect-ratio:4/3}
+    .team-body{padding:24px}
+    .services .side{flex-direction:row}
+    .services .side .asterisk{display:none}
+    .side-tile{flex:1}
+    .cta .card-red{padding:32px 20px 0}
+    .who-grid,.steps,.values .grid,.p-grid{grid-template-columns:1fr}
+    .f-cols{grid-template-columns:1fr 1fr}
+    footer{border-radius:36px 36px 0 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="home">
+  <div class="wrap">
+    <nav class="nav">
+      <a href="#home" class="brand">
+        <span class="brand-mark">PD</span>
+        <span>Prasta Dwipayana<small>Risk Advisor</small></span>
+      </a>
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#nilai">Nilai</a></li>
+        <li><a href="#tim">Tim</a></li>
+        <li><a href="#proses">Proses</a></li>
+      </ul>
+      <a class="btn btn-white" href="#kontak"><span class="txt">Konsultasi</span> <span class="arrow">→</span></a>
+    </nav>
+
+    <div class="hero-grid">
+      <h1 class="hero-title reveal"><span class="asterisk">✱</span>Melindungi yang Berharga, <br>Mempersiapkan <span class="tag">Masa Depan</span></h1>
+
+      <div class="hero-left reveal">
+        <p>Membantu Anda memahami risiko kehidupan, mempersiapkan perlindungan finansial, dan menjaga hal-hal berharga bagi Anda dan keluarga.</p>
+        <a class="btn btn-ghost" href="#tentang">Kenali Saya</a>
+      </div>
+
+      <div class="hero-photo">
+        <div class="arch"><img src="assets/prasta.webp" alt="Prasta Dwipayana, Risk Advisor"></div>
+        <div class="cta-float">
+          <a class="btn btn-red" href="https://wa.me/6282145881108?text=Halo%20Pak%20Prasta%2C%20saya%20ingin%20konsultasi%20perlindungan." target="_blank" rel="noopener">Chat WhatsApp</a>
+          <a class="btn btn-ghost" href="mailto:prastadwipayana@yahoo.com">Email</a>
+        </div>
+      </div>
+
+      <div class="hero-right reveal">
+        <div class="big">Asah<span>•</span>Asih<span>•</span>Asuh</div>
+        <p>Pendekatan personal &amp; transparan</p>
+        <span class="pill">Risk Advisor</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ================= PILLARS ================= -->
+  <div class="pillars">
+    <div class="wrap">
+      <div class="bar card-red reveal">
+        <div class="item"><b>Jiwa</b><span>Perlindungan keluarga</span></div>
+        <div class="item"><b>Kesehatan</b><span>Sakit &amp; risiko kritis</span></div>
+        <div class="item"><b>Masa Depan</b><span>Pendidikan, keuangan &amp; warisan</span></div>
+        <div class="item"><b>Edukasi</b><span>Konsultasi risiko personal</span></div>
+      </div>
+      <p class="caption">Perlindungan untuk individu, keluarga, dan pelaku usaha.</p>
+    </div>
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about" id="tentang">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <span class="eyebrow">Tentang Saya</span>
+        <h2>Perlindungan Lebih dari <br>Sekadar <span class="tag">Produk</span></h2>
+        <div class="img-a"><img loading="lazy" src="assets/profile.webp" alt="Prasta Dwipayana berbicara di sebuah acara"><div class="badge"><b>Prasta Dwipayana</b><span>Risk Advisor</span></div></div>
+      </div>
+      <div class="reveal">
+        <p class="lead">Saya <strong>Prasta Dwipayana</strong>, seorang Risk Advisor yang percaya bahwa perlindungan bukan hanya tentang produk, melainkan tentang kepedulian, tanggung jawab, dan kesiapan menghadapi berbagai kemungkinan hidup.</p>
+        <p class="muted">Melalui pendekatan yang personal dan transparan, saya ingin membantu individu, keluarga, dan pelaku usaha mengenali risiko, memahami pilihan perlindungan, serta mengambil keputusan yang sesuai dengan kebutuhan dan kemampuan finansial mereka.</p>
+        <blockquote class="quote">“Rencana terbaik adalah yang Anda pahami sepenuhnya — dan sesuai dengan kemampuan Anda.”</blockquote>
+        <a class="btn btn-red" href="#kontak">Jadwalkan Konsultasi <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="services" id="layanan">
+    <div class="wrap">
+      <div class="card-red reveal">
+        <div>
+          <h2>Layanan <span class="tag">Saya</span></h2>
+          <p class="intro">Dari mengenali risiko hingga mendampingi saat klaim — saya hadir di setiap langkah perjalanan perlindungan Anda.</p>
+          <ul class="svc-list">
+            <li><span class="n">1</span><div><b>Perlindungan Jiwa dan Keluarga</b><small>Memahami kebutuhan perlindungan bagi orang-orang yang Anda cintai.</small></div></li>
+            <li><span class="n">2</span><div><b>Perlindungan Kesehatan dan Risiko Kritis</b><small>Mengenali potensi dampak finansial akibat sakit dan kondisi kritis.</small></div></li>
+            <li><span class="n">3</span><div><b>Perencanaan Masa Depan</b><small>Membantu merencanakan kebutuhan pendidikan, keuangan jangka panjang, dan warisan sesuai kebutuhan.</small></div></li>
+            <li><span class="n">4</span><div><b>Konsultasi dan Edukasi Risiko</b><small>Diskusi personal untuk memahami kebutuhan, pilihan, manfaat, biaya, dan ketentuan perlindungan.</small></div></li>
+          </ul>
+        </div>
+        <div class="photo"><img loading="lazy" src="assets/prasta.webp" alt="Prasta Dwipayana"></div>
+        <div class="side">
+          <span class="asterisk">✱</span>
+          <a href="#nilai" class="side-tile tile-white">Nilai<br>Saya<span class="c">→</span></a>
+          <a href="#kontak" class="side-tile tile-deep">Mulai<br>Diskusi<span class="c">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTS ================= -->
+  <section class="products" id="produk">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><span class="eyebrow">Produk Andalan</span><h2>Pilihan Perlindungan <span class="tag">Unggulan</span></h2></div>
+        <p>Konvensional, syariah, maupun asuransi tambahan — saya bantu memilih yang paling sesuai dengan kebutuhan dan kemampuan Anda.</p>
+      </div>
+      <div class="p-grid reveal">
+        <article class="p-card">
+          <div class="p-top"><span class="p-badge">Syariah · Sakit Kritis</span><h3>PRUCritical Amanah</h3><p class="sub">Lindungi diri dari penyakit kritis lebih awal dengan manfaat komprehensif.</p><div class="p-stat"><b>100%</b><span>Manfaat akhir kepesertaan di usia 85 tahun*</span></div></div>
+          <div class="p-body"><ul><li><span>Perlindungan sejak awal dan menyeluruh terhadap risiko <strong>Kondisi Kritis sejak Tahap Awal</strong></span></li><li><span><strong>Manfaat Bebas Kontribusi</strong> sejak terdiagnosis Kondisi Kritis Tahap Awal</span></li><li><span>Manfaat Akhir Kepesertaan pada usia 85 tahun hingga <strong>100% Santunan Asuransi</strong> (khusus Plan Plus)</span></li></ul><a class="btn btn-red" href="https://wa.me/6282145881108?text=Halo%20Pak%20Prasta%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20PRUCritical%20Amanah." target="_blank" rel="noopener">Tanya via WhatsApp <span class="arrow">→</span></a></div>
+        </article>
+        <article class="p-card">
+          <div class="p-top"><span class="p-badge">Syariah · Jiwa</span><h3>PRUCinta</h3><p class="sub">Asuransi jiwa syariah dengan kontribusi terjangkau untuk keluarga tercinta.</p><div class="p-stat"><b>400%</b><span>Santunan meninggal karena kecelakaan saat Lebaran*</span></div></div>
+          <div class="p-body"><ul><li><span>Perlindungan hingga <strong>20 tahun</strong>, dapat diperpanjang tanpa pemeriksaan kesehatan</span></li><li><span>Manfaat meninggal dunia <strong>100%</strong>; karena kecelakaan <strong>300%</strong></span></li><li><span>Tidak ada klaim: <strong>kontribusi kembali 100% + bonus 10%</strong></span></li><li><span>Bayar 10 tahun, proteksi 20 tahun — mulai <strong>±Rp15 ribu/hari</strong></span></li></ul><a class="btn btn-red" href="https://wa.me/6282145881108?text=Halo%20Pak%20Prasta%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20PRUCinta." target="_blank" rel="noopener">Tanya via WhatsApp <span class="arrow">→</span></a></div>
+        </article>
+        <article class="p-card">
+          <div class="p-top"><span class="p-badge">Syariah · Warisan</span><h3>PRUAnugerah Syariah</h3><p class="sub">Jalani amanah, siapkan warisan bermakna untuk anugerah terindah.</p><div class="p-stat"><b>120</b><span>Tahun — perlindungan seumur hidup</span></div></div>
+          <div class="p-body"><ul><li><span>Manfaat Dana Usia Mapan hingga <strong>100%</strong> dari total kontribusi yang dibayarkan</span></li><li><span>Santunan asuransi hingga <strong>150%</strong> sejak awal kepesertaan</span></li><li><span>Santunan meninggal akibat kecelakaan hingga <strong>350%</strong> saat Idulfitri, Umrah &amp; Haji</span></li><li><span><strong>Bebas Kontribusi</strong> jika terdiagnosis 1 dari 60 Kondisi Kritis</span></li><li><span>Periode pembayaran fleksibel <strong>5, 10, atau 15 tahun</strong></span></li></ul><a class="btn btn-red" href="https://wa.me/6282145881108?text=Halo%20Pak%20Prasta%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20PRUAnugerah%20Syariah." target="_blank" rel="noopener">Tanya via WhatsApp <span class="arrow">→</span></a></div>
+        </article>
+        <article class="p-card">
+          <div class="p-top"><span class="p-badge">Jiwa · Sakit Kritis</span><h3>PCB 88</h3><p class="sub">Asuransi jiwa dengan proteksi sakit kritis hingga usia 88 tahun.</p><div class="p-stat"><b>88</b><span>Tahun — usia perlindungan</span></div></div>
+          <div class="p-body"><ul><li><span>Manfaat meninggal dunia <strong>100%</strong>; karena kecelakaan <strong>300%</strong></span></li><li><span>Manfaat kondisi kritis <strong>100%</strong> (60 kondisi kritis) &amp; angioplasti <strong>10%</strong></span></li><li><span>Manfaat jatuh tempo <strong>100%</strong> bila tetap hidup di usia 88 tahun</span></li><li><span>Masa pembayaran <strong>5, 10, atau 15 tahun</strong></span></li></ul><a class="btn btn-red" href="https://wa.me/6282145881108?text=Halo%20Pak%20Prasta%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20PCB%2088." target="_blank" rel="noopener">Tanya via WhatsApp <span class="arrow">→</span></a></div>
+        </article>
+        <article class="p-card">
+          <div class="p-top"><span class="p-badge">Jiwa · Kembali Lebih</span><h3>PRUSmart Plan</h3><p class="sub">Perlindungan jiwa yang memberikan manfaat lebih dari uang yang Anda bayarkan.</p><div class="p-stat"><b>920%</b><span>#KembaliLebih — manfaat tunai akhir pertanggungan*</span></div></div>
+          <div class="p-body"><ul><li><span>Perlindungan jiwa <strong>20 tahun</strong>, <strong>tanpa pemeriksaan medis</strong></span></li><li><span>Santunan meninggal dunia hingga <strong>150%</strong></span></li><li><span>Manfaat tunai tahunan hingga <strong>25%</strong> + peningkatannya</span></li><li><span>Masa pembayaran premi <strong>6 atau 8 tahun</strong></span></li></ul><a class="btn btn-red" href="https://wa.me/6282145881108?text=Halo%20Pak%20Prasta%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20PRUSmart%20Plan." target="_blank" rel="noopener">Tanya via WhatsApp <span class="arrow">→</span></a></div>
+        </article>
+        <article class="p-card">
+          <div class="p-top"><span class="p-badge">Tambahan · Kesehatan</span><h3>PRUWell Health</h3><p class="sub">Asuransi tambahan kesehatan untuk perlindungan rawat inap yang komplit. #SehatPangkalBisa</p><div class="p-stat"><b>Rp72,5 M</b><span>Batas manfaat tahunan (Plan Diamond)*</span></div></div>
+          <div class="p-body"><ul><li><span><strong>PRUPriority Hospitals</strong> — rawat inap cashless dengan estimasi biaya transparan sejak awal</span></li><li><span>Pra &amp; pasca rawat inap: kamar &amp; ICU, tindakan bedah, fisioterapi, hingga <strong>psikiater &amp; psikolog</strong></span></li><li><span>Perawatan lanjutan: <strong>paliatif, kanker, dan cuci darah</strong></span></li><li><span><strong>Telehealth</strong> di Indonesia, serta Malaysia/Singapura untuk diagnosis kanker</span></li><li><span>Reward PRUWell: keringanan biaya asuransi hingga <strong>20%</strong></span></li></ul><a class="btn btn-red" href="https://wa.me/6282145881108?text=Halo%20Pak%20Prasta%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20PRUWell%20Health." target="_blank" rel="noopener">Tanya via WhatsApp <span class="arrow">→</span></a></div>
+        </article>
+      </div>
+      <p class="p-note">*Persentase mengacu pada Uang Pertanggungan / Santunan Asuransi / kontribusi sesuai ketentuan masing-masing produk. Syarat &amp; ketentuan berlaku — detail lengkap mengacu pada Ringkasan Informasi Produk dan Layanan (RIPLAY).</p>
+    </div>
+  </section>
+
+  <!-- ================= VALUES ================= -->
+  <section class="values" id="nilai">
+    <div class="wrap">
+      <div class="row reveal"><span>Asah</span><span class="star">✦</span><span>Asih</span><span class="star">✦</span><span>Asuh</span></div>
+      <div class="rule"></div>
+      <div class="grid reveal">
+        <article class="v-card">
+          <div class="img"><img loading="lazy" src="assets/asah.jpg" alt="Buku terbuka bercahaya — simbol terus belajar"><span class="label">Asah</span></div>
+          <div class="body"><h3>Terus Belajar dan Bertumbuh</h3><p>Mengasah pengetahuan, keterampilan, pola pikir, dan profesionalisme agar selalu mampu memberikan edukasi serta pelayanan yang lebih baik.</p></div>
+        </article>
+        <article class="v-card">
+          <div class="img"><img loading="lazy" src="assets/asih.jpg" alt="Tangan menggenggam hati bercahaya — simbol ketulusan"><span class="label">Asih</span></div>
+          <div class="body"><h3>Melayani dengan Ketulusan</h3><p>Mengutamakan empati, kepedulian, dan cinta kasih. Mendengarkan kebutuhan setiap orang tanpa menghakimi serta menghormati setiap keputusan.</p></div>
+        </article>
+        <article class="v-card">
+          <div class="img"><img loading="lazy" src="assets/asuh.jpg" alt="Mentor membimbing menuju tangga bercahaya — simbol membimbing"><span class="label">Asuh</span></div>
+          <div class="body"><h3>Membimbing untuk Bertumbuh</h3><p>Mendampingi nasabah dan rekan kerja dengan penuh tanggung jawab, membangun kepercayaan, serta mendorong pertumbuhan menuju kehidupan yang lebih baik.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TEAM ================= -->
+  <section class="team" id="tim">
+    <div class="wrap">
+      <div class="team-card reveal">
+        <img loading="lazy" src="assets/team.webp" alt="Prasta Dwipayana bersama tim dalam kegiatan pengembangan bersama">
+        <div class="team-body">
+          <div>
+            <span class="eyebrow">Tim Saya</span>
+            <h2>Bertumbuh <span class="tag">Bersama</span></h2>
+            <p>Mendampingi rekan kerja dengan penuh tanggung jawab, membangun kepercayaan, dan saling mendorong untuk terus bertumbuh — agar setiap nasabah mendapatkan pelayanan terbaik.</p>
+          </div>
+          <div class="chips"><span>Belajar Bersama</span><span>Saling Mendukung</span><span>Tumbuh Bersama</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHO ================= -->
+  <section class="who">
+    <div class="wrap reveal">
+      <h2>Siapa yang <span class="tag">Saya Bantu</span></h2>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="head"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><b>Individu &amp; Profesional</b><small>Karier &amp; penghasilan</small></div></div>
+          <p>Melindungi kemampuan Anda menghasilkan pendapatan dan menyiapkan dana darurat kesehatan.</p>
+        </div>
+        <div class="who-card">
+          <div class="head"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><div><b>Keluarga Muda</b><small>Rumah &amp; anak</small></div></div>
+          <p>Memastikan kebutuhan keluarga dan pendidikan anak tetap terjaga dalam kondisi apa pun.</p>
+        </div>
+        <div class="who-card">
+          <div class="head"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><div><b>Pelaku Usaha</b><small>UMKM &amp; pemilik bisnis</small></div></div>
+          <p>Memahami risiko yang dapat memengaruhi keuangan pribadi, keluarga, dan usaha Anda.</p>
+        </div>
+        <div class="who-card">
+          <div class="head"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span><div><b>Pasangan</b><small>Rencana bersama</small></div></div>
+          <p>Membangun fondasi perlindungan sejak awal perjalanan hidup bersama.</p>
+        </div>
+        <div class="who-card">
+          <div class="head"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><div><b>Menjelang Pensiun</b><small>Masa tenang</small></div></div>
+          <p>Menyiapkan perlindungan kesehatan dan warisan bagi orang-orang tercinta.</p>
+        </div>
+        <div class="who-card">
+          <div class="head"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><div><b>Pemilik Polis</b><small>Review &amp; second opinion</small></div></div>
+          <p>Meninjau ulang polis yang sudah ada agar tetap relevan dengan kebutuhan saat ini.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROCESS ================= -->
+  <section class="process" id="proses">
+    <div class="wrap">
+      <h2 class="reveal">Cara Kita <span class="tag">Bekerja Sama</span></h2>
+      <div class="steps reveal">
+        <div class="step"><b>Kenalan &amp; Mendengar</b><p>Diskusi santai tentang kondisi, tujuan, dan kekhawatiran Anda.</p></div>
+        <div class="step"><b>Analisis Risiko</b><p>Memetakan risiko dan kebutuhan perlindungan secara menyeluruh.</p></div>
+        <div class="step"><b>Rekomendasi Transparan</b><p>Pilihan yang dijelaskan dengan jelas, sesuai kemampuan finansial.</p></div>
+        <div class="step"><b>Pendampingan Berkelanjutan</b><p>Review berkala dan bantuan penuh saat proses klaim.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KOMITMEN / FLYER ================= -->
+  <section class="commit" id="komitmen">
+    <div class="wrap commit-grid">
+      <a class="flyer reveal" href="assets/flyer.webp" target="_blank" rel="noopener" aria-label="Lihat flyer ukuran penuh">
+        <img loading="lazy" src="assets/flyer.webp" alt="Flyer Prasta Dwipayana: Kami siap melayani dengan hati dan sesuai kebutuhan">
+      </a>
+      <div class="reveal">
+        <span class="eyebrow">Komitmen Saya</span>
+        <h2>Siap Melayani dengan <span class="tag">Hati</span> dan Sesuai Kebutuhan</h2>
+        <ul class="c-list">
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>Memberi Perlindungan</b><span>untuk masa depan Anda</span></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><div><b>Perencanaan Tepat</b><span>sesuai tujuan &amp; kebutuhan</span></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span><div><b>Pendampingan Setia</b><span>kapan pun Anda butuhkan</span></div></li>
+        </ul>
+        <blockquote class="quote">“Perlindungan yang tepat, keputusan yang bijak, hidup lebih tenang.”</blockquote>
+        <p class="tagline">Aman Hari Ini, Tenang Esok Hari.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="cta" id="kontak">
+    <div class="wrap">
+      <div class="card-red reveal">
+        <div>
+          <h2>Siap Melindungi <br>Hal Berharga <span class="tag">Anda?</span></h2>
+          <p>Mari mulai dengan satu percakapan. Tanpa tekanan — hanya pemahaman yang lebih baik tentang risiko dan pilihan perlindungan Anda.</p>
+          <div class="cta-actions">
+            <a class="btn btn-white" href="https://wa.me/6282145881108?text=Halo%20Pak%20Prasta%2C%20saya%20ingin%20konsultasi%20perlindungan." target="_blank" rel="noopener">WhatsApp 0821-4588-1108 <span class="arrow">→</span></a>
+            <a class="btn btn-ghost" href="mailto:prastadwipayana@yahoo.com">prastadwipayana@yahoo.com</a>
+          </div>
+        </div>
+        <div class="cta-photo"><img loading="lazy" src="assets/cta.webp" alt="Prasta Dwipayana"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="brand"><span class="brand-mark">PD</span><span>Prasta Dwipayana<small>Risk Advisor</small></span></div>
+      <p>Membantu individu, keluarga, dan pelaku usaha mengenali risiko serta mengambil keputusan perlindungan yang tepat. <strong>Asah • Asih • Asuh.</strong></p>
+    </div>
+    <div class="f-cols">
+      <div><h4>Layanan</h4><span>Perlindungan Jiwa &amp; Keluarga</span><span>Kesehatan &amp; Risiko Kritis</span><span>Perencanaan Masa Depan</span><span>Konsultasi &amp; Edukasi Risiko</span></div>
+      <div><h4>Navigasi</h4><a href="#home">Beranda</a><a href="#tentang">Tentang</a><a href="#layanan">Layanan</a><a href="#produk">Produk</a><a href="#nilai">Nilai</a><a href="#tim">Tim</a><a href="#proses">Proses</a></div>
+      <div><h4>Hubungi</h4><a href="https://wa.me/6282145881108" target="_blank" rel="noopener">0821-4588-1108</a><a href="tel:+6282145881108">Telepon</a><a href="mailto:prastadwipayana@yahoo.com">prastadwipayana@yahoo.com</a></div>
+      <div><h4>Nilai</h4><span>Asah — Terus Belajar</span><span>Asih — Melayani Tulus</span><span>Asuh — Membimbing</span></div>
+    </div>
+  </div>
+  <div class="f-bottom">© 2026 Prasta Dwipayana · Risk Advisor
+    <small>Informasi pada halaman ini bersifat umum. Manfaat, biaya, dan ketentuan perlindungan mengacu pada ringkasan informasi produk &amp; polis resmi.</small>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/6282145881108" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.6.1a8.2 8.2 0 0 1-4.1-3.6c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3 3 0 0 0 2-1.4 2.4 2.4 0 0 0 .2-1.4c-.1-.2-.3-.3-.6-.4zM12 21.8a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.9 9.9 0 1 1 12 21.8zM12 0a12 12 0 0 0-10.3 18L0 24l6.2-1.6A12 12 0 1 0 12 0z"/></svg>
+</a>
+
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
